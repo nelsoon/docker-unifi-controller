@@ -11,6 +11,7 @@ LABEL maintainer="aptalca"
 ARG UNIFI_BRANCH="stable"
 ARG DEBIAN_FRONTEND="noninteractive"
 
+RUN printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d
 RUN \
   echo "**** install packages ****" && \
   apt-get update && \
